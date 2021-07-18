@@ -1,0 +1,11 @@
+server:
+  port: 8380
+product:
+  info:
+    service:
+      base:
+        url: http://localhost:8180
+  price:
+    service:
+      base:
+        url: http://localhost:8280

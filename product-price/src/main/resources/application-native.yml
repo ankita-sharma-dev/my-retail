@@ -1,0 +1,6 @@
+server:
+  port: 8280
+spring:
+  data:
+    mongodb:
+      uri: mongodb://test:test123@localhost:27017/price_dev

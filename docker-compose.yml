@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+    mongodb:
+        image : mongo
+        container_name: mongodb
+        environment:
+          - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+          - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+          - MONGODB_USERNAME=test
+          - MONGODB_PASSWORD=test123
+          - MONGODB_DATABASE=price_dev
+        volumes:
+        - ./init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh
+        ports:
+        - 27017:27017
+        restart: unless-stopped
+    productinfo:
+        image: com.target.mock/product-info:0.0.1-SNAPSHOT
+        container_name: product-info
+        environment:
+          PROFILE: "cloud"
+    productprice:
+        image: com.target.mock/product-price:0.0.1-SNAPSHOT
+        container_name: product-price
+        environment:
+          PROFILE: "cloud"
+    productcomposite:
+        image: com.target/product-composite:0.0.1-SNAPSHOT
+        container_name: product-composite
+        ports:
+          - "8081:8080"
+        environment:
+          PROFILE: "cloud"
+          
+    

@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://test:test123@mongodb:27017/price_dev
+server:
+  port: 8080

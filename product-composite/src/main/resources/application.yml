@@ -1,0 +1,9 @@
+product:
+  info:
+    service:
+      base:
+        url: http://product-info:8080
+  price:
+    service:
+      base:
+        url: http://product-price:8080
