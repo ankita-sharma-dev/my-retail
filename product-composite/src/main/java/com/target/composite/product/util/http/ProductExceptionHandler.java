@@ -4,13 +4,14 @@ import com.target.composite.product.util.exception.ProductException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.time.ZonedDateTime;
 
-@RestController
+@RestControllerAdvice
 public class ProductExceptionHandler {
     @ExceptionHandler(value = ProductException.class)
     ResponseEntity<Map<String, Object>> handleProductException(ProductException exception){

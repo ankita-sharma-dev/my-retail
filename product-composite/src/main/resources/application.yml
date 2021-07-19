@@ -10,5 +10,5 @@ product:
 feign:
   client:
     config:
-      feignName:
+      default:
         errorDecoder: com.target.composite.product.util.exception.decoder.CustomErrorDecoder
