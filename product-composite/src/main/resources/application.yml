@@ -7,3 +7,8 @@ product:
     service:
       base:
         url: http://product-price:8080
+feign:
+  client:
+    config:
+      feignName:
+        errorDecoder: com.target.composite.product.util.exception.decoder.CustomErrorDecoder
