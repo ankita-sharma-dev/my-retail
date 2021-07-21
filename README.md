@@ -29,7 +29,9 @@ product-composite aggregates information from the two core services and presents
 * timestamp
 * error message
 
-Enabled API documentation via Swagger.
+API documentation enabled via Swagger.
+
+`Product` composite response cached using _redis_ to increase performance and scalability, and also reduce load on the actual data services.
 
     
 ## Set up
@@ -49,3 +51,10 @@ Successful test requests
 
 * http://localhost:8080/products/13860428
 * http://localhost:8080/products/13860430
+
+## Technology Stack
+* SpringBoot
+* Mongodb
+* Redis
+* Docker
+* Swagger

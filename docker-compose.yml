@@ -1,5 +1,11 @@
 version: "3.8"
 services:
+    my-retail-redis:
+        image: redis
+        command: ["redis-server", "--bind", "my-retail-redis"]
+        container_name: my-retail-redis
+        ports:
+            - "6379:6379"
     mongodb:
         image : mongo
         container_name: mongodb

@@ -9,6 +9,7 @@ import com.target.composite.product.model.MonetaryAmount;
 import com.target.composite.product.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.cache.annotation.Cacheable;
 
 
 @Service
@@ -21,6 +22,8 @@ public class ProductCompositeIntegration implements ProductCompositeService{
         this.infoClient = infoClient;
         this.priceClient = priceClient;
     }
+
+    @Cacheable(value = "productComposite")
     @Override
     public Product getProduct(long productId) {
         ProductInfo info = getProductInfo(productId);

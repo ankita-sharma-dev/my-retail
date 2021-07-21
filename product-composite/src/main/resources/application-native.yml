@@ -1,3 +1,9 @@
+spring:
+  redis:
+    host: localhost
+    port: 6378
+    cache:
+      type: redis
 server:
   port: 8380
 product:
@@ -9,3 +15,4 @@ product:
     service:
       base:
         url: http://localhost:8280
+
